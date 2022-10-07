@@ -20,7 +20,17 @@
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="./img/favicon-16x16.png">
     <!-- 각 종 플러그인과 설정 파일 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 구형 브라우저 html5태그 인식 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- 구형 브라우저에서 css animation 인식 -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 구형 브라우저에서 미디어쿼리 인식 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- jquery 플러그인 연결 -->
+    <script src="./js/jquery-1.11.1.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
+
     <style>
     /* header.css*/
     .hd {width: 100%; position:fixed; top: 0; left: 0; z-index: 91;
@@ -65,35 +75,71 @@
     .ico_lst {clear:both; width: 100%; overflow: hidden;}
     .ico_lst li a {display: block; background-repeat: no-repeat; background-position: 0 center; border-style: auto 80%;
      padding-left: 55px;}
-    .ico_lst li a .icon1 { background-image: url("./img/icon/ico_1.svg"); }
-    .ico_lst li a .icon2 { background-image: url("./img/icon/ico_1.svg");}
-    .ico_lst li a .icon3 { background-image: url("./img/icon/ico_1.svg");}
+    .ico_lst li a .icon1 { background-image: url("./img/icon/ico.png"); }
+    .ico_lst li a .icon2 { background-image: url("./img/icon/ico.png");}
+    .ico_lst li a .icon3 { background-image: url("./img/icon/ico.png");}
     .cate_tit { color: #333; font-style: 22px; padding-bottom: 0.5em;}
-    .cate_com { color: #333; font-size: 18px;}
+    .cate_com { color: #333; font-size: 18px; overflow: hidden; word-spacing: noweap;}
     
-    #page2 {background-color:rgba(255, 227, 255, 0.445);}
+    #page2 {background-color:rgba(255, 227, 255, 0.192);}
     .pic_lst {clear:both; width: 100%;}
     .pic_lst:after {content: ""; display: block; clear: both;}
     .pic_lst li {float:left; position: relative; margin-bottom: 40px;}
     .pic_lst li a {display: block; width: 360px; margin-right: 40px; overflow: hidden; height: 300px;}
     .pic_lst li img {display: block; width: 100%; margin-left: -50px; transition-duration: 0.8s;}
-    /**/
+    .pic_lst li a:hover img { margin-left: 0; }
+    .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
+    .pic_lst li a:hover .hv_box { opacity:1; }
+    .pic_tit { position:absolute; top:30px; left: 30px; 
+    text-shadow:0px 0px 3px rgba(255, 0, 234, 0.986); }
+    .pic_com { position:absolute; right:30px; bottom:30px; 
+    text-shadow:0px 0px 3px rgba(250, 1, 138, 0.973); }
 
+    #page3 { background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
+    #page3 .page_wrap { width: 100%; }
+    .circle_lst { clear:both; width: 4455px; }
+    .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff;
+    float:left; margin:28px;  }
+    .circle_lst.lst2 li { float:right; }
+    .circle_lst li a { display:block; width: 100%; height: 100%; }
+    .circle_lst li a img { display:block; width:160px; height:auto; 
+    position:absolute; top:50%; left: 20px; z-index:11; margin-top: -28px; }
 
+    .ft { clear:both; width: 100%; height: 200px; background-color: #fff; padding-bottom: 50px; }
+    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 50px;  }
+    .ft_wrap:after { content:""; display:block; clear:both; }
+    .ft_logo { float:left; width: 150px; }
+    .mid_box { float:left; width: 760px; padding-left: 100px; }
+    .fnb { clear:both; }
+    .fnb a { color:#333; font-size:14px; padding: 24px; }
+    .fnb a.dpc { color:; }
+    .addr { padding-left: 24px; color:#333; padding-top: 20px; 
+    font-size:12px; line-height: 2; }
+    .copyright { padding-left: 24px; color:#333; padding-top: 10px; }
+    .sel_box { float:right; border-bottom:1px solid #333;
+    height: 44px; line-height: 44px; text-align:center; width: 140px; }
+    #sel { border:none; outline: none; background-color: transparent; color:#333; }
+    #sel option { color:#333 }
     </style>
-    <!--
     <script>
     $(document).ready(function(){
         $(window).scroll(function(){
             var ht = $(window).height();
             var tp = $(this).scrollTop();
             if(tp>=600){
-                $(".hd").css("position",)
+                $(".hd").css("position","fixed");
+            } else {
+                $(".hd").css("position","absolute");
             }
         });
-    });
+        $
+        $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
+        $lst1_obj = $(".circle_lst li").clone();
+        $(".circle_lst.lst2").append($lst1_obj);
+    });    
     </script>
-    -->
 </head>
 <body>
 <div class="wrap">
@@ -336,8 +382,8 @@
             <div class="ft_logo"><img src="./img/logo.png"width="130" height="40" alt="하단로고"></div>
             <div class="mid_box">
                 <nav class="fnb">
-                    <a href="site map.html">사이트맵</a>
-                    <a href="https://www.samsungdisplay.com/kor/footer/privacy.jsp"><span>개인정보 처리 방침</span></a>
+                    <a href="site map.html" class="dpc">사이트맵</a>
+                    <a href="https://www.samsungdisplay.com/kor/footer/privacy.jsp" class="dpc">개인정보 처리 방침</a>
                     <a href="https://www.samsungdisplay.com/CyberAudit/kor/index.html">윤리경영</a>
                     <a href="https://www.samsungdisplay.com/kor/patents.jsp">특허/상표</a>
                 </nav>
