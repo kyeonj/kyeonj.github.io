@@ -52,16 +52,13 @@
     .gnb .sub {display:none; width: 100%; height: auto; position: absolute; top: 40px; 
         background-color :aliceblue; left: 0; z-index: 90; height: 124px; }
     .gnb li:hover .sub {display: block; }
-    .gnb li .sub li {clear: both; height: 30px; line-height: 30px; background-color: ;
-    border-bottom: 2px solid #fff; width: 100%;}
+    .gnb li .sub li {clear: both; height: 30px; line-height: 30px; border-bottom: 2px solid #fff; width: 100%;}
     .gnb li .sub li a{ background: aliceblue; color:rgb(117, 116, 116); font-size: 15px; display: block; 
     overflow: hidden; text-indent: 2em; white-space: nowrap;}
     .gnb li .sub li:hover a { color:lightpink }
     .content {clear: both; width: 100%; }
     .vs { clear: both; width: 100%; height: 100vh; overflow: hidden;}
     .vdo {display:block; width: 100%; height: auto; }
-
-    /*.gnb li .dp1 { display:block; height: 40px; line-height: 40px; text-align:center; color:#333;}*/
 
     .page { clear: both; width: 100%;}
     .page_wrap {width: 1200px; margin: 0 auto;}
@@ -73,13 +70,13 @@
     .lst li.left { float:left; width: 816px; height: 459px; }
     .lst li.right { float:right; width: 350px; height: 459px;}
     .ico_lst {clear:both; width: 100%; overflow: hidden;}
-    .ico_lst li a {display: block; background-repeat: no-repeat; background-position: 0 center; border-style: auto 80%;
-     padding-left: 55px;}
-    .ico_lst li a .icon1 { background-image: url("./img/icon/ico.png"); }
-    .ico_lst li a .icon2 { background-image: url("./img/icon/ico.png");}
-    .ico_lst li a .icon3 { background-image: url("./img/icon/ico.png");}
-    .cate_tit { color: #333; font-style: 22px; padding-bottom: 0.5em;}
-    .cate_com { color: #333; font-size: 18px; overflow: hidden; word-spacing: noweap;}
+    .ico_lst li a {display: block; background-repeat: no-repeat; background-position: 0 center;
+     padding-left: 55px; background-size:auto 90%; }
+    .ico_lst li a.icon1 { background-image: url("./img/icon/ico.png");}
+    .ico_lst li a.icon2 { background-image: url("./img/icon/ico.png");}
+    .ico_lst li a.icon3 { background-image: url("./img/icon/ico.png");}
+    .cate_tit { color: #333; font-style: 22px; padding-bottom: 0.5em; overflow: hidden; text-overflow: ellipsis; white-space:nowrap; }
+    .cate_com { color: #333; font-size: 18px; text-overflow: ellipsis; white-space:nowrap; overflow: hidden;  }
     
     #page2 {background-color:rgba(255, 227, 255, 0.192);}
     .pic_lst {clear:both; width: 100%;}
@@ -90,10 +87,9 @@
     .pic_lst li a:hover img { margin-left: 0; }
     .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
     .pic_lst li a:hover .hv_box { opacity:1; }
-    .pic_tit { position:absolute; top:30px; left: 30px; 
-    text-shadow:0px 0px 3px rgba(255, 0, 234, 0.986); }
+    .pic_tit { position:absolute; top:30px; left: 30px; text-shadow: 0px 0px 6px navy}
     .pic_com { position:absolute; right:30px; bottom:30px; 
-    text-shadow:0px 0px 3px rgba(250, 1, 138, 0.973); }
+    text-shadow:0px 0px 5px navy; }
 
     #page3 { background-repeat: no-repeat; 
     background-size: cover; 
@@ -110,14 +106,14 @@
     .ft { clear:both; width: 100%; height: 200px; background-color: #fff; padding-bottom: 50px; }
     .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 50px;  }
     .ft_wrap:after { content:""; display:block; clear:both; }
-    .ft_logo { float:left; width: 150px; }
+    .ft_logo { float:left; width: 150px; margin-top: -10px; }
     .mid_box { float:left; width: 760px; padding-left: 100px; }
     .fnb { clear:both; }
     .fnb a { color:#333; font-size:14px; padding: 24px; }
-    .fnb a.dpc { color:; }
+    .fnb a.dpc { color:cornflowerblue; }
     .addr { padding-left: 24px; color:#333; padding-top: 20px; 
-    font-size:12px; line-height: 2; }
-    .copyright { padding-left: 24px; color:#333; padding-top: 10px; }
+    font-size:16px; line-height: 2; }
+    .copyright { padding-left: 24px; color:cornflowerblue; padding-top: 10px; }
     .sel_box { float:right; border-bottom:1px solid #333;
     height: 44px; line-height: 44px; text-align:center; width: 140px; }
     #sel { border:none; outline: none; background-color: transparent; color:#333; }
@@ -198,38 +194,35 @@
         </div>
     </header>
     <div class="content">
-        <figure class="vs"><!--메인 사이즈 확대-->
+        <figure class="vs">
             <video src="./video/main_1.mp4" autoplay muted class="vdo"></video>
         </figure>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <!--중앙 정렬처리-->
                 <h2 class="page_tit">QD-OLED ?<br>효율적인 빛의 활용과 간단한 구조로 <br>차세대 대형 디스플레이에 사용되고 있습니다.</h2>
                 <ul class="lst">
-                    <li class="left"><!--사이즈조절-->
-                        <iframe name="vdo2" id="vdo2" width="816" height="459" src="/video/main_2.mp4" title="삼성디스플레이 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <!--
-                        <iframe name="vdo2" id="vdo2" width="816" height="459" src="https://www.youtube.com/watch?v=qKHhIJd0Nwo&t=24s" title="삼성디스플레이 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                        -->
+                    <li class="left">
+                        <iframe name="vdo2" id="vdo2" width="816" height="459" src="https://www.youtube.com/embed/LQr3trzS8Hk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+                        <video src="./video/main_2.mp4" class="vdo2" width="816" height="459" autoplay muted ></video>
                     </li>
                     <li class="right">
                         <ul class="ico_lst">
-                            <li><!--아이콘넣기-->
-                                <a href="https://www.samsungdisplay.com/kor/tech/oled-display.jsp" class="icon1">
+                            <li>
+                                <a href="https://www.youtube.com/embed/sAov8cIOBnk" class="icon1" target="vdo2">
                                     <h3 class="cate_tit">OLED Display</h3>
                                     <p class="cate_com">Why 삼성 OLED ?</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://innovate.samsungdisplay.com/" class="icon2">
+                                <a href="https://www.youtube.com/embed/g8jSJ90J7Ps" class="icon2" target="vdo2">
                                     <h3 class="cate_tit">QD-OLED</h3>
                                     <p class="cate_com">Take The Quantum Leap</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://oledera.samsungdisplay.com/eng/oled-story/" class="icon3">
+                                <a href="https://www.youtube.com/embed/hMHQnUuLPT0" class="icon3" target="vdo2">
                                     <h3 class="cate_tit">Galaxy Z Fold 4</h3>
-                                    <p class="cate_com">디스플레이 혁신 기술이 <br>집약된 OLED</p>
+                                    <p class="cate_com">디스플레이 혁신 기술이 집약된 OLED</p>
                                 </a>
                             </li>
                         </ul>
@@ -243,7 +236,7 @@
                 <ul class="pic_lst">
                     <li>
                         <a href="">
-                            <img src="./img/KQ85QNB900FXKR.webp" alt="Neo QLED 8K 214cm 인피니트 스크린" class="pic">
+                            <img src="./img/kq85qnb900fxkr.webp" alt="Neo QLED 8K 214cm 인피니트 스크린" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">2022 Neo QLED 8K 214cm<br>인피니트 스크린</h3>
                                 <p class="pic_com">KQ85QNB900FXKR</p>
@@ -252,7 +245,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="/img/KQ85QNB800FXKR.png" alt="Neo QLED 8K 214cm 스탠드형" class="pic">
+                            <img src="/img/kq85qnb800fxkr.png" alt="Neo QLED 8K 214cm 스탠드형" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">2022 Neo QLED 8K 214cm<br>스탠드형</h3>
                                 <p class="pic_com">KQ85QNB800FXKR</p>
@@ -261,7 +254,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/KQ75QNB700FXKR.webp" alt="Neo QLED 8K 189cm 스탠드형" class="pic">
+                            <img src="./img/kq75qnb700fxkr.webp" alt="Neo QLED 8K 189cm 스탠드형" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">2022 Neo QLED 8K 189cm<br>스탠드형</h3>
                                 <p class="pic_com">KQ75QNB700FXKR</p>
@@ -270,7 +263,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/NT930QED-KU71G.png" alt="갤럭시 북2 Pro 360" class="pic">
+                            <img src="./img/nt930qed-ku71g.png" alt="갤럭시 북2 Pro 360" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 북2 Pro 360</h3>
                                 <p class="pic_com">NT930QED-KU71G</p>
@@ -279,7 +272,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/NT930XED-KU71S.png" alt="갤럭시 북2 Pro" class="pic">
+                            <img src="./img/nt930xed-ku71s.png" alt="갤럭시 북2 Pro" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 북2 Pro</h3>
                                 <p class="pic_com">NT930XED-KU71S</p>
@@ -288,7 +281,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/NT950QDA-XC73Z.png" alt="갤럭시 북 Flex2 39.6cm" class="pic">
+                            <img src="./img/nt950qda-xc73z.png" alt="갤럭시 북 Flex2 39.6cm" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 북 Flex2 39.6cm<br>Core™ i7</h3>
                                 <p class="pic_com">NT950QDA-XC73Z</p>
@@ -297,7 +290,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/SM-F936NZAAKOO.png" alt="갤럭시Z폴드4 자급제" class="pic">
+                            <img src="./img/sm-f936nzaakoo.png" alt="갤럭시Z폴드4 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시Z폴드4 자급제</h3>
                                 <p class="pic_com">SM-F936NZAAKOO</p>
@@ -306,7 +299,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/SM-F936NDRAKOO.webp" alt="갤럭시Z폴드4 자급제" class="pic">
+                            <img src="./img/sm-f936ndrakoo.webp" alt="갤럭시Z폴드4 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시Z폴드4 자급제<br>(단독컬러)</h3>
                                 <p class="pic_com">SM-F936NDRAKOO</p>
@@ -315,7 +308,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/SM-F721NLVEKOO.webp" alt="갤럭시Z플립4 자급제" class="pic">
+                            <img src="./img/sm-f721nlvekoo.webp" alt="갤럭시Z플립4 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시Z플립4 자급제</h3>
                                 <p class="pic_com">SM-F721NLVEKOO</p>
@@ -324,7 +317,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/SM-S901NLVEKOO.png" alt="갤럭시 S22 자급제" class="pic">
+                            <img src="./img/sm-s901nlvekoo.png" alt="갤럭시 S22 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 S22 자급제</h3>
                                 <p class="pic_com">SM-S901NLVEKOO</p>
@@ -333,7 +326,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/SM-S906NLBWKOO.png" alt="갤럭시S22+ 자급제" class="pic">
+                            <img src="./img/sm-s906nlbwkoo.png" alt="갤럭시S22+ 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 S22+ 자급제<br>(삼성 단독컬러)</h3>
                                 <p class="pic_com">SM-S906NLBWKOO</p>
@@ -342,7 +335,7 @@
                     </li>
                     <li>
                         <a href=""><!--링크넣거나 지우기-->
-                            <img src="./img/SM-S908NZARKOO.png" alt="갤럭시S22Ultra 자급제" class="pic">
+                            <img src="./img/sm-s908nzarkoo.png" alt="갤럭시S22Ultra 자급제" class="pic">
                             <div class="hv_box">
                                 <h3 class="pic_tit">갤럭시 S22 Ultra 자급제<br>(삼성 단독컬러)</h3>
                                 <p class="pic_com">SM-S908NZARKOO</p>
@@ -379,7 +372,7 @@
     </div>
     <footer class="ft">
         <div class="ft_wrap">
-            <div class="ft_logo"><img src="./img/logo.png"width="130" height="40" alt="하단로고"></div>
+            <div class="ft_logo"><img src="./img/logo.png"width="150" height="50" alt="하단로고"></div>
             <div class="mid_box">
                 <nav class="fnb">
                     <a href="site map.html" class="dpc">사이트맵</a>
@@ -391,7 +384,7 @@
                     SAMSUNG DISPLAY | 대표이사 | 최주선 <br>
                     경기도 용인시 기흥구 삼성로 1 | +82 31 5181 1114
                 </p>
-                <p class="copyright"> Copyright © SAMSUNG DISPLAY All rights reserved. <대표번호 : 031-5181-1114></p>
+                <p class="copyright"> Copyright © SAMSUNG DISPLAY All rights reserved.<br> <대표번호 : 031-5181-1114></p>
             </div>
             <div class="sel_box">
                 <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
