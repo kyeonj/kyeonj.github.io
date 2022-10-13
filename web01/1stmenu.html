@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="header.css">
     <style>
     /* header.css*/
+    .hd { position:fixed; }
+
+    /*
     .hd {width: 100%; position:fixed; top: 0; left: 0; z-index: 91;
         background-color: #fff; height: 130px;}
     .hd_wrap {width: 1200px; margin: 0 auto;}
@@ -59,67 +62,24 @@
     .content {clear: both; width: 100%; }
     .vs { clear: both; width: 100%; height: 100vh; overflow: hidden;}
     .vdo {display:block; width: 100%; height: auto; }
+    */
 
     /* content */
-    .page { clear: both; width: 100%;}
-    .page_wrap {width: 1200px; margin: 0 auto;}
-    #page1, #page3 { background-color:azure; }
-    .page_tit { text-align: center; font-size:25px; padding-top:1.2em; padding-bottom: 0.8em; }
-    .lst { clear:both; width: 1200px; }
-    .lst:after { content:""; display:block; clear: both;}
-    .lst li {margin-bottom: 40px;}
-    .lst li.left { float:left; width: 816px; height: 459px; }
-    .lst li.right { float:right; width: 350px; height: 459px;}
-    .ico_lst {clear:both; width: 100%; overflow: hidden;}
-    .ico_lst li a {display: block; background-repeat: no-repeat; background-position: 0 center;
-     padding-left: 55px; background-size:auto 90%; }
-    .ico_lst li a.icon1 { background-image: url("./img/icon/ico.png");}
-    .ico_lst li a.icon2 { background-image: url("./img/icon/ico.png");}
-    .ico_lst li a.icon3 { background-image: url("./img/icon/ico.png");}
-    .cate_tit { color: #333; font-style: 22px; padding-bottom: 0.5em; overflow: hidden; text-overflow: ellipsis; white-space:nowrap; }
-    .cate_com { color: #333; font-size: 18px; text-overflow: ellipsis; white-space:nowrap; overflow: hidden;  }
-    
-    #page2 {background-color:rgba(255, 227, 255, 0.192);}
-    .pic_lst {clear:both; width: 100%;}
-    .pic_lst:after {content: ""; display: block; clear: both;}
-    .pic_lst li {float:left; position: relative; margin-bottom: 40px;}
-    .pic_lst li a {display: block; width: 360px; margin-right: 40px; overflow: hidden; height: 300px;}
-    .pic_lst li img {display: block; width: 100%; margin-left: -50px; transition-duration: 0.8s;}
-    .pic_lst li a:hover img { margin-left: 0; }
-    .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
-    .pic_lst li a:hover .hv_box { opacity:1; }
-    .pic_tit { position:absolute; top:30px; left: 30px; text-shadow: 0px 0px 6px navy}
-    .pic_com { position:absolute; right:30px; bottom:30px; 
-    text-shadow:0px 0px 5px navy; }
-
-    #page3 { background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
-    #page3 .page_wrap { width: 100%; }
-    .circle_lst { clear:both; width: 4455px; }
-    .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff;
-    float:left; margin:28px;  }
-    .circle_lst.lst2 li { float:right; }
-    .circle_lst li a { display:block; width: 100%; height: 100%; }
-    .circle_lst li a img { display:block; width:160px; height:auto; 
-    position:absolute; top:50%; left: 20px; z-index:11; margin-top: -28px; }
+    .vs { clear:both; width: 100%; height:500px; overflow: hidden;}
+    .vs img { display:block; width: 1200px; height:auto; margin: auto; }
+    .bread { clear:both; width: 100%; line-height: 60px; border-bottom: 3px solid #eee;}
+    .bread_fr { width: 1200px; margin: 0 auto; }
+    .page { clear:both; width: 100%; min-height:100vh;}
+    .page:after { content:""; display:block; clear:both; }
+    .page_wrap { width: 1200px; margin: 0 auto; }
+    .content { display:none; }
+    .content:target { display:block; }
+ 
+    .page_title {padding-top: 1em;}
+    .home {color: #333;}
+    .to_top {position: fixed; bottom: 80px; }
     
      /* footer */
-    .ft { clear:both; width: 100%; height: 200px; background-color: #fff; padding-bottom: 50px; }
-    .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 50px;  }
-    .ft_wrap:after { content:""; display:block; clear:both; }
-    .ft_logo { float:left; width: 150px; margin-top: -10px; }
-    .mid_box { float:left; width: 760px; padding-left: 100px; }
-    .fnb { clear:both; }
-    .fnb a { color:#333; font-size:14px; padding: 24px; }
-    .fnb a.dpc { color:cornflowerblue; }
-    .addr { padding-left: 24px; color:#333; padding-top: 20px; 
-    font-size:16px; line-height: 2; }
-    .copyright { padding-left: 24px; color:cornflowerblue; padding-top: 10px; }
-    .sel_box { float:right; border-bottom:1px solid #333;
-    height: 44px; line-height: 44px; text-align:center; width: 140px; }
-    #sel { border:none; outline: none; background-color: transparent; color:#333; }
-    #sel option { color:#333 }
     </style>
     <link rel="stylesheet" href="footer.css">
     <script>
@@ -127,18 +87,10 @@
         $(window).scroll(function(){
             var ht = $(window).height();
             var tp = $(this).scrollTop();
-            if(tp>=600){
-                $(".hd").css("position","fixed");
-            } else {
-                $(".hd").css("position","absolute");
-            }
+
         });
-        $
-        $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
-        $lst1_obj = $(".circle_lst li").clone();
-        $(".circle_lst.lst2").append($lst1_obj);
     });    
-    </script>
+        </script>
 </head>
 <body>
 <div class="wrap">
@@ -155,41 +107,41 @@
                     <li class="item1">
                         <a href="" class="dp1">기업정보</a>
                         <ul class="sub">
-                            <li><a href="1stmenu1.html#page1">기업개요</a></li>
-                            <li><a href="1stmenu2.html#page2">CEO 인사말</a></li>
-                            <li><a href="1stmenu2.html#page3">사업장 정보</a></li>
+                            <li><a href="1stmenu.html#page1">기업개요</a></li>
+                            <li><a href="1stmenu.html#page2">CEO 인사말</a></li>
+                            <li><a href="1stmenu.html#page3">사업장 정보</a></li>
                         </ul>
                     </li>
                     <li class="item2">
                         <a href="" class="dp1">OLED Display</a>
                         <ul class="sub">
-                            <li><a href="2stmenu1.html#page1">What is OLED?</a></li>
-                            <li><a href="2stmenu2.html#page2">폴더블 OLED</a></li>
-                            <li><a href="2stmenu3.html#page3">어플리케이션별 특징</a></li>
+                            <li><a href="2stmenu.html#page1">What is OLED?</a></li>
+                            <li><a href="2stmenu.html#page2">폴더블 OLED</a></li>
+                            <li><a href="2stmenu.html#page3">어플리케이션별 특징</a></li>
                         </ul>
                     </li>
                     <li class="item3">
                         <a href="" class="dp1">지속가능경영</a>
                         <ul class="sub">
-                            <li><a href="3stmenu1.html#page1">인권정책</a></li>
-                            <li><a href="3stmenu2.html#page2">녹색경영</a></li>
-                            <li><a href="3stmenu3.html#page3">준법경영</a></li>
+                            <li><a href="3stmenu.html#page1">인권정책</a></li>
+                            <li><a href="3stmenu.html#page2">녹색경영</a></li>
+                            <li><a href="3stmenu.html#page3">준법경영</a></li>
                         </ul>
                     </li>
                     <li class="item4">
                         <a href="" class="dp1">천안/아산인프라</a>
                         <ul class="sub">
-                            <li><a href="4stmenu1.html#page1">디스플레이의 메카</a></li>
-                            <li><a href="4stmenu2.html#page2">교통/주거 인프라</a></li>
-                            <li><a href="4stmenu3.html#page3">교육/문화/복지 인프라</a></li>
+                            <li><a href="4stmenu.html#page1">디스플레이의 메카</a></li>
+                            <li><a href="4stmenu.html#page2">교통/주거 인프라</a></li>
+                            <li><a href="4stmenu.html#page3">교육/문화/복지 인프라</a></li>
                         </ul>
                     </li>
                     <li class="item5">
                         <a href="" class="dp1">인재/채용</a>
                         <ul class="sub">
-                            <li><a href="5stmenu1.html#page1">인재상</a></li>
-                            <li><a href="5stmenu2.html#page2">직무소개</a></li>
-                            <li><a href="5stmenu3.html#page3">회사생활</a></li>
+                            <li><a href="5stmenu.html#page1">인재상</a></li>
+                            <li><a href="5stmenu.html#page2">직무소개</a></li>
+                            <li><a href="5stmenu.html#page3">회사생활</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -198,18 +150,23 @@
     </header>
     <div class="content" id="page1">
         <figure class="vs">
-            <img src="./img/oled-kv-m.jpg" alt="비주얼">
+            <img src="./img/company-overview-kv-m.jpg" alt="비주얼">
         </figure>
         <div class="bread">
             <div class="bread_fr">
-                <a href="" class="home">HOME</a> &gt;
+                <a href="index.html" class="home">HOME</a> &gt;
                 <select name="sel1" id="sel1" class="sel1">
                     <option>기업정보</option>
-                    <option value="2stmenu1.html#page1">OLED Display</option>
-                    <option value="3stmenu1.html#page1">지속가능경영</option>
-                    <option value="4stmenu1.html#page1">천안/아산인프라</option>
-                    <option value="5stmenu1.html#page1">인재/채용</option> 
+                    <option value="2stmenu.html#page1">OLED Display</option>
+                    <option value="3stmenu.html#page1">지속가능경영</option>
+                    <option value="4stmenu.html#page1">천안/아산인프라</option>
+                    <option value="5stmenu.html#page1">인재/채용</option> 
                 </select> &gt;
+                <select name="sel2" id="sel2" class="sel">
+                    <option>기업개요</option>
+                    <option value="1stmenu.html#page2">CEO 인사말</option>
+                    <option value="1stmenu.html#page3">사업장 정보</option>
+                </select>
             </div>
         </div>
         <section class="page">
@@ -217,33 +174,69 @@
                 <h2 class="page_title">기업개요</h2>
             </div>
         </section>
-        <script>
-        var sel1 = document.getElementById("sel1");
-        var sel2 = document.getElementById("sel2");
-        var sel3 = document.getElementById("sel3");
-        var sel4 = document.getElementById("sel4");
-        var sel5 = document.getElementById("sel5");
-        var sel6 = document.getElementById("sel6");
-        sel1.addEventListener("change", function(){
-            location.href = sel1.value;
-        });
-        sel2.addEventListener("change", function(){
-            location.href = sel2.value;
-        });
-        sel3.addEventListener("change", function(){
-            location.href = sel3.value;
-        });
-        sel4.addEventListener("change", function(){
-            location.href = sel4.value;
-        });
-        sel5.addEventListener("change", function(){
-            location.href = sel5.value;
-        });
-        sel6.addEventListener("change", function(){
-            location.href = sel6.value;
-        });
-        </script>
     </div>
+    <div class="content" id="page2">
+        <figure class="vs">
+            <img src="./img/company-overview-kv-m.jpg" alt="비주얼">
+        </figure>
+        <div class="bread">
+            <div class="bread_fr">
+                <a href="" class="home">HOME</a> &gt;
+                <select name="sel3" id="sel3" class="sel">
+                    <option>기업정보</option>
+                    <option value="2stmenu.html#page1">OLED Display</option>
+                    <option value="3stmenu.html#page1">지속가능경영</option>
+                    <option value="4stmenu.html#page1">천안/아산인프라</option>
+                    <option value="5stmenu.html#page1">인재/채용</option> 
+                </select> &gt; 
+                <select name="sel4" id="sel4" class="sel">
+                    <option>CEO 인사말</option>
+                    <option value="1stmenu.html#page1">기업개요</option>
+                    <option value="1stmenu.html#page3">사업장 정보</option>
+                </select>
+            </div>
+        </div>
+        <section class="page">
+            <div class="page_wrap">
+                <h2 class="page_title">CEO 인사말</h2>
+            </div>
+        </section>
+    </div>
+    <div class="content" id="page3">
+        <figure class="vs">
+            <img src="./img/company-overview-kv-m.jpg" alt="비주얼">
+        </figure>
+        <div class="bread">
+            <div class="bread_fr">
+                <a href="" class="home">HOME</a> &gt;
+                <select name="sel5" id="sel5" class="sel">
+                    <<option>기업정보</option>
+                    <option value="2stmenu.html#page1">OLED Display</option>
+                    <option value="3stmenu.html#page1">지속가능경영</option>
+                    <option value="4stmenu.html#page1">천안/아산인프라</option>
+                    <option value="5stmenu.html#page1">인재/채용</option> 
+                </select> &gt; 
+                <select name="sel6" id="sel6" class="sel">
+                    <option>사업장 정보</option>
+                    <option value="1stmenu.html#page1">기업개요</option>
+                    <option value="1stmenu.html#page2">CEO 인사말</option>
+                </select>
+            </div>
+        </div>
+        <section class="page">
+            <div class="page_wrap">
+                <h2 class="page_title">사업장 정보</h2>
+            </div>
+        </section>
+    </div>
+    <script>
+        var sel = document.getElementsByClassName("sel");
+        for(var i=0;i<sel.length;i++){
+            sel[i].addEventListener("change", function(){
+                location.href = this.value;
+            });
+        }
+        </script>
     <footer class="ft">
         <div class="ft_wrap">
             <div class="ft_logo"><img src="./img/logo.png"width="150" height="50" alt="하단로고"></div>
@@ -276,5 +269,6 @@
         </div>
     </footer>
 </div>
+<a
 </body>
 </html>
