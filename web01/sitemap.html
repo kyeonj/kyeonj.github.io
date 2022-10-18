@@ -42,25 +42,26 @@
     .bread_fr { width: 1200px; margin: 0 auto; }
     .page { clear:both; width: 100%; min-height:100vh;}
     .page:after { content:""; display:block; clear:both; }
-    .page_wrap { width: 1200px; margin: 0 auto; }
+    .page_wrap { width: 1200px; margin: 0 auto;}
  
-    .page_title {padding-top: 1em; text-align: center; margin-top: 50px; color: #333;}
+    .page_title {padding-top: 1em;}
     .home {color: #333;}
-
-    .frm { border:2px solid darkgray; padding: 24px; width: 580px; margin:50px auto;  }
-    .frm_tb { display:table; margin:40px auto;  }
-    .frm_tb tr { display:table-row; }
-    .frm_tb td, .frm_tb th { display:table-cell; }
-    .frm_tb th { width:200px; height: 48px; color:navy}
-    .frm_tb td { width:300px; height: 48px; }
-    .frm_tb label:before { content:"*"; color:deeppink}
-
-    .in_dt { background-color:#fff; height:32px; line-height: 32px; width: 280px; color:#333; font-size: 16px; text-indent:0.5em; }
-    .in_btn { display:block; background-color:cornflowerblue; margin-top: 5%; min-width:120px; height: 32px; 
-    line-height: 32px; border-radius:20px; border-color: cornflowerblue; float:left; margin-left:80px; margin-right:20px; cursor:pointer; }
-    .in_btn:hover { background-color:lightpink; border-color: lightpink;}
     
-     /* footer */
+    .frm { border:2px solid #333; padding: 24px; width:1200px; margin:50px auto; }
+    .sitemap_area { width: 960px; margin: 30px auto; }
+    .menu { clear:both; padding-bottom: 100px; }
+    .menu:after { content:""; display:block; clear:both; }
+    .menu > li { float:left; width: 20%; }
+    .menu > li > a.dp1 { display:block; line-height: 48px; font-size:20px; color:#333; font-weight: bold; padding-top: 40px; }
+    .menu .sub li { clear:both; padding-left: 16px; }
+    .menu .sub li a { display:block; color:#555; font-size:16px; line-height: 36px; }
+    .menu .sub li a:hover { text-decoration: underline; color:lightpink; }
+
+    .menu2:before { content:"보조 메뉴"; display:block; clear:both; font-size:20px; font-weight:bold; padding-bottom: 20px; }
+    .menu2 li { float:left; line-height: 60px; }
+    .menu2 li a { display:block; color:#555; }
+    .menu2 li a:hover { text-decoration: underline; color:lightpink; } 
+    /* footer */
     </style>
     <link rel="stylesheet" href="footer.css">
     <script>
@@ -137,53 +138,70 @@
     </header>
     <div class="content">
         <figure class="vs">
-            <img src="./img/login.jpg" alt="비주얼">
+            <img src="./img/company-overview-kv-m.jpg" alt="비주얼">
         </figure>
         <div class="bread">
             <div class="bread_fr">
                 <a href="index.html" class="home">HOME</a> &gt;
-                <span class="sel">회원가입</span>
+                <span class="sel">사이트맵</span>
             </div>
         </div>
         <section class="page">
             <div class="page_wrap">
-                <h2 class="page_title">회원가입</h2>
-                <div class="form_fr">
-                    <form name="frm1" action="" method="post" id="loginForm" class="frm">
-                        <table class="frm_tb">
-                            <tbody>
-                                <tr>
-                                    <th><label for="id">아이디</label></th>
-                                    <td>
-                                        <input type="text" id="id" name="id" class="in_dt" required autofocus>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="id">비밀번호</label></th>
-                                    <td>
-                                        <input type="password" id="pw" name="pw" class="in_dt" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="name">이  름</label></th>
-                                    <td>
-                                        <input type="text" id="name" name="name" class="in_dt" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="email">이메일</label></th>
-                                    <td>
-                                        <input type="email" id="email" name="email" class="in_dt" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <button type="submit" class="in_btn">회원가입</button>
-                                        <button type="reset" class="in_btn">취소</button>
-                                    </td>
-                             </tr>
-                        </tbody>
-                     </table>
+                <h2 class="page_title">사이트맵</h2><br>
+                <div class="frm">
+                    <nav class="sitemap_area">
+                        <ul class="menu menu1">
+                            <li class="item1">
+                                <a href="" class="dp1">기업정보</a>
+                                <ul class="sub">
+                                    <li><a href="1stmenu.html#page1">기업개요</a></li>
+                                    <li><a href="1stmenu.html#page2">CEO 인사말</a></li>
+                                    <li><a href="1stmenu.html#page3">사업장 정보</a></li>
+                                </ul>
+                            </li>
+                            <li class="item2">
+                                <a href="" class="dp1">OLED Display</a>
+                                <ul class="sub">
+                                    <li><a href="2stmenu.html#page1">What is OLED?</a></li>
+                                    <li><a href="2stmenu.html#page2">폴더블 OLED</a></li>
+                                    <li><a href="2stmenu.html#page3">어플리케이션별 특징</a></li>
+                                </ul>
+                            </li>
+                            <li class="item3">
+                                <a href="" class="dp1">지속가능경영</a>
+                                <ul class="sub">
+                                    <li><a href="3stmenu.html#page1">인권정책</a></li>
+                                    <li><a href="3stmenu.html#page2">녹색경영</a></li>
+                                    <li><a href="3stmenu.html#page3">준법경영</a></li>
+                                </ul>
+                            </li>
+                            <li class="item4">
+                                <a href="" class="dp1">천안/아산인프라</a>
+                                <ul class="sub">
+                                    <li><a href="4stmenu.html#page1">디스플레이의 메카</a></li>
+                                    <li><a href="4stmenu.html#page2">교통/주거 인프라</a></li>
+                                    <li><a href="4stmenu.html#page3">교육/문화/복지 인프라</a></li>
+                                </ul>
+                            </li>
+                            <li class="item5">
+                                <a href="" class="dp1">인재/채용</a>
+                                <ul class="sub">
+                                    <li><a href="5stmenu.html#page1">인재상</a></li>
+                                    <li><a href="5stmenu.html#page2">직무소개</a></li>
+                                    <li><a href="5stmenu.html#page3">회사생활</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="menu menu2">
+                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="join.html">회원가입</a></li>
+                            <li><a href="sitemap.html" class="dpc">사이트맵</a></li>
+                            <li><a href="member1.html" class="dpc">개인정보 처리 방침</a></li>
+                            <li><a href="member2.html">윤리경영</a></li>
+                            <li><a href="member3.html">특허/상표</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </section>
