@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+body, html { font-family: 'Noto Sans KR', sans-serif; }
+.table { min-width:1350px; }
+#logo2 { display:block; width:73px; height:67px; background-image:url("./data/logo3.jpg");
+background-size:75% auto; background-repeat:no-repeat; background-position:center center; }
+#nav-group { border-bottom:3px solid #ddd; }
+#gnb .navbar-link::after { content:""; display:none; }
+#sidebar .navbar { display:block; width:100%; background-color:transparent; }
+#sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
+#frm1.search_form { border-top:2px solid #ddd; border-bottom:2px solid #ddd; height:60px; padding-top:10px; padding-bottom:10px;  }
+#frm1 .inline { width:70%; float:left; margin-right:2%; }
+#frm1.search_form .inline { display:inline-block; width:auto; }
+.navbar-item.has-dropdown.is-hoverable { min-width:110px; position:static; }
+.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
+.navbar-item.has-dropdown.is-hoverable.single { position:relative; }
+#nav .navbar-dropdown.cate { min-width:940px; width:940px; position:absolute; left:50px; }
+#nav .navbar-dropdown.single { min-width:150px; width:150px; left:auto; top:68px; }
+#nav .navbar-dropdown.cate a { display:inline-block; padding:8px; margin-right:20px;  
+width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+font-weight:500; }
+#nav .navbar-dropdown.single a { display:inline-block; width:150px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+font-weight:500; }
+p.title { font-size:1.4rem; }
+p.subtitle { font-size:1.1rem; }
+.item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
+  -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }
+.breadcrumb ul li:last-child { padding-right:1.5rem; }
+p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
+max-height:40px; }
+
+.hidden_item { display:none; }
+.star_data { height:36px; position:relative; background-image:url("/pro03/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group { width:100px; height:36px; position:relative; }
+#star_group #stardate { width:100px; height:36px; background-image:url("/pro03/data/star1.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group #starrate { width:100px; height:36px; background-image:url("/pro03/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star10:checked ~ #star_group #starrate { width:100px; }
+#star9:checked ~ #star_group #starrate { width:90px; }
+#star8:checked ~ #star_group #starrate { width:80px; }
+#star7:checked ~ #star_group #starrate { width:70px; }
+#star6:checked ~ #star_group #starrate { width:60px; }
+#star5:checked ~ #star_group #starrate { width:50px; }
+#star4:checked ~ #star_group #starrate { width:40px; }
+#star3:checked ~ #star_group #starrate { width:30px; }
+#star2:checked ~ #star_group #starrate { width:20px; }
+#star1:checked ~ #star_group #starrate { width:10px; }
+#star_btn { width:100px; height:36px; position:absolute; z-index:20; top:0; left:0;  }
+#star_btn label { display:block; width:10px; height:36px; position:relative; float:left; }
+.container { display: block; width: 100%; height: auto;}
+
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
+	<style>
+	body { background:white; }
+
+	</style>	
+	<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
+	<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>	
+	<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+  </head>
+  <body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+    <nav class="navbar" style="background-color:aliceblue;" role="navigation" aria-label="main navigation" id="nav">
+      <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" id="logo2" href="index.html">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start" id="gnb">
+            <!-- ajax로 메뉴 로딩하여 추가하기 -->
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="sights.html" class="navbar-link">
+                      명소
+                </a>
+                <div class="navbar-dropdown cate" id="cate01"><a href="sightsdetail1.html">현대 모터스튜디오 부산</a><a href="sightsdetail2.html">뮤지엄 원</a></div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="food.html" class="navbar-link cate">
+                      음식
+                </a> 
+                   <div class="navbar-dropdown cate" id="cate02"><a href="fooddetail1.html">우연횟집</a><a href="fooddetail2.html">옥미아구찜 하단점</a></div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="shopping.html" class="navbar-link cate">
+                      쇼핑
+                </a>
+                   <div class="navbar-dropdown cate" id="cate03"><a href="shoppingdetail1.html">밀락더마켓</a><a href="shoppingdetail2.html">소품샵</a></div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="festival.html" class="navbar-link cate">
+                      축제
+                </a>
+                <div class="navbar-dropdown cate" id="cate04"><a href="festivaldetail1.html">크리스마스트리문화축제</a><a href="festivaldetail2.html">부산불꽃축제</a></div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable single">
+                <a class="navbar-link">
+                      유용한 정보
+                </a>
+                <div class="navbar-dropdown single">
+                     <a class="navbar-item" href="Notice.html">
+                           공지사항
+                     </a>
+                </div> 
+            </div>
+        </div>
+        
+        <div class="navbar-end" id="tnb">
+          <div class="navbar-item">
+              
+         <div class="buttons">
+           <a href="joinForm.html" class="button is-white">
+             <strong>회원가입</strong>
+           </a>
+           <a href="login.html" class="button is-white">
+             로그인
+           </a>
+         </div>
+        </div> 
+      </div>
+    </div>
+      </div>
+    </nav>
+<script>
+$(document).ready(function(){
+  $.ajax({
+    url:"/pro03/MemuLoadCtrl.do",
+    type:"POST",
+    enctype:"UTF-8",
+    datatype:"json",
+    processData:false,
+    contentType:false, 
+    cache:false,
+    success:function(data){
+      $(".navbar-dropdown.cate").empty();
+      var trans = $.parseJSON(data);
+      $.each(trans, function(key, value){
+        if(key=="data"){
+          for(var i=0;i<value.length;i++){
+            if(value[i].cate=="A"){
+              $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+            } else if(value[i].cate=="B"){
+              $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+            } else if(value[i].cate=="C"){
+              $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+            } else if(value[i].cate=="D"){
+              $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+            }
+          }
+        }
+      });
+      
+    }
+  });
+});
+</script>
+</div>
+</div>
+<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+  <ul style="float:right;">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="TourList.html">전체 장소</a></li>
+    <li><a href="festival.html">
+          
+        
+        <span>축제</span>
+    
+    
+    
+    
+</a></li>
+<li class="is-active"><a href="#" aria-current="page">부산불꽃축제</a></li>
+</ul>
+</nav>
+<section class="section">
+<div class="container">
+<h1 class="title">부산불꽃축제 상세보기</h1>
+    <div id="con">
+        <table class="table">
+            
+            <tr>
+          
+          <td>
+              <img src="./data/meun4.png" class="lazy" onerror="this.style.display='none'" alt="배너" />
+              <!-- onerror="this.style.display='none'"  -->
+            </td>
+              
+          </tr>
+          
+          
+    </tbody>
+  </table>
+    </div>
+  <table class="table">
+     <tbody>
+      <tr>
+        <th style="min-width:180px;">번호</th>
+        <td>3</td>
+      </tr>
+      <tr>
+        <th>분류</th>
+        <td>
+              
+          
+          
+          
+          
+          <span>축제</span>
+          
+</td>
+      </tr>
+      <tr>
+        <th>장소 번호</th>
+        <td><p>D0001</p>
+            <input type="hidden" name="tourno" id="tourno" value="D0001" />
+        </td>
+      </tr>
+      <tr> 
+        <th>장소명</th>
+        <td>
+          부산불꽃축제
+        </td>	
+      </tr>
+      <tr>
+        <th>장소 주요 설명</th>
+        <td><p>부산의 가을은 화려한 불빛으로 꽃핀다. 광안리 해변은 물론, 광안리 바다가 내려다보이는 곳이라면 부산 곳곳에 사람들이 모인다. 사람들의 수많은 이목이 광안리 바다와 하늘에 활짝 핀 불꽃에 하나로 모였다. 지금은 바로 부산불꽃축제의 시간이다.
+
+        반짝이는 광안대교가 보이기 시작한다. 광안대교가 가까워질수록 사람들은 점점 모여들어서 점차 발 디딜 틈도 보이지 않는다. 하지만 가을밤 기분 좋을 정도로 쌀쌀한 바닷바람을 맞으며 불꽃을 기다리는 사람들의 표정은 피어날 불꽃보다도 밝은 듯하다.</p></td>
+      </tr>
+      <tr>
+        <th>장소 상세 설명</th>
+        <td><p>부산불꽃축제를 더욱 즐겁게 즐기기 위한 아이템에는 무엇이 있을까? 무엇보다 보온에 신경을 쓰는 게 좋다. 낮에는 따뜻한 날씨일지라도 가을밤바다는 바람도 많이 불고 춥기 때문에, 출발할 때는 약간 덥다고 느낄지라도 따뜻한 외투도 입고 담요도 챙기는 것이 좋다. 그리고 수많은 사람이 광안리에 모이는 만큼 한 번 자리를 잡으면 불꽃축제가 끝날 때 까지 다시 나갔다가 자리로 돌아오기 쉽지 않다. 불꽃축제와 함께 즐길 먹을거리와 마실 거리를 미리 챙기고, 화장실도 자리에 앉기 전에 미리 해결해서 난감한 경우가 생기지 않도록 하자.
+
+        미리 도착해서 함께 불꽃축제를 즐길 사람들과 먹을거리를 나누며 기다리는 시간. 긴 시간 같지만 점점 많아지는 사람들을 바라보며 즐거운 축제의 분위기에 젖어 들다보면 어느새 주위는 어둑어둑해진다. 이제 불꽃의 시간이 얼마 남지 않았다.</p></td>
+      </tr>
+      <tr>
+          <th>주소</th>
+          <td>부산 수영구 광안해변로 219
+              <input type="hidden" name="addr" id="addr" value="부산불꽃축제 주소" />
+              <input type="hidden" name="place" id="place" value="부산불꽃축제" />
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="clear:both; margin-bottom:20px; padding-bottom:20px; ">
+    <div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; "></div>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
+    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은API키&​libraries=services"></script>
+    <script>
+    var mapContainer = document.getElementById('map'), 
+        mapOption = { 
+            center: new kakao.maps.LatLng(35.1795543, 129.0756416), 
+            level: 7 
+        };  
+    
+   
+    var map = new kakao.maps.Map(mapContainer, mapOption); 
+    
+    
+    var geocoder = new kakao.maps.services.Geocoder();
+    
+    
+    geocoder.addressSearch($("#addr").val(), function(result, status) {
+    
+        
+         if (status === kakao.maps.services.Status.OK) {
+    
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: coords
+            });
+            
+            
+            var infowindow = new kakao.maps.InfoWindow({
+                content: '<div style="width:150px;text-align:center;padding:6px 0;">'+$('#place').val()+'</div>'
+            });
+            infowindow.open(map, marker);
+    
+          
+            map.setCenter(coords);
+        } 
+    });    
+    </script>
+    </div>
+<div class="buttons">
+  <a href="TourList.html" class="button is-link is-light">전체 목록</a>
+  <a href="festival.html" class="button is-link is-light">카테고리 목록</a>
+  
+</div>
+</div>
+</section>
+<footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>부산문화관광</strong>  <strong>관광문의 1330</strong>   <strong>민원문의 051-120</strong>  
+      </p>
+    </div>
+  </footer>
+  </body>
+  </html>
