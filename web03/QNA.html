@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>공지사항 글 등록</title>
+    <title>묻고 답하기</title>
+    
+
+
+
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
@@ -60,6 +66,16 @@ background-repeat:no-repeat; background-position:left center; background-size:10
 
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" href="./resource/datatables.min.css">
+	<script src="./resource/datatables.min.js"></script>
+	<script>
+	$(document).ready( function () {
+	    $('#tb1').DataTable({
+	    	  aaSorting: []
+	    	  //, order : [[ 0, "asc" ]]
+	   	});
+	});
+	</script>
   </head>
   <body>
     <body>
@@ -134,8 +150,8 @@ background-repeat:no-repeat; background-position:left center; background-size:10
             </div>
           </div>
         </div>
-     </nav>
- <script>
+        </nav>
+    <script>
 	$(document).ready(function(){
 		$.ajax({
 			url:"/pro03/MemuLoadCtrl.do",
@@ -170,36 +186,25 @@ background-repeat:no-repeat; background-position:left center; background-size:10
 	</script>
 	</div>
 </div>
-  <section class="section">
+<section class="section">
     <div class="container">
-      <h1 class="title">글 등록하기</h1>
-      	<form action="/pro03/AddNoticeCtrl.do" method="post">
-			<table class="table">
-			   <tbody>
-			    <tr>
-			      <th><label for="title">제목</label></th>
-			      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required /></td>
-			    </tr>
-			    <tr>
-			      <th><label for="content">내용</label></th>
-			      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
-			    </tr>
-			  </tbody>
-			</table>
-			<div class="buttons">
-			  <button type="submit" class="button is-link is-light">등록</button>
-			  <button type="reset" class="button is-link is-light">취소</button>
-			  <a href="Notice.html" class="button is-link is-light">목록</a>
-			</div>
-		</form>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>부산문화관광</strong>  <strong>관광문의 1330</strong>   <strong>민원문의 051-120</strong>  
-      </p>
-    </div>
-  </footer>
-  </body>
-  </html>
+		<h2 class="title">묻고 답하기</h2>
+		<table class="table" id="tb1">
+			<thead>
+				<tr>
+					<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
+				</tr>
+			</thead>
+		</table>
+		</div>	
+	</section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>부산문화관광</strong>  <strong>관광문의 1330</strong>   <strong>민원문의 051-120</strong>  
+          </p>
+        </div>
+      </footer>
+      </body>
+      </html>
+  
