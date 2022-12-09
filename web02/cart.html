@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>장바구니 목록</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="./css/common.css">
+<style>
+.title { padding-top:36px; padding-bottom:20px; }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">innisfree</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                스킨케어
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="skin.html">스킨</a>
+                <a class="dropdown-item" href="lotion.html">로션</a>
+                <a class="dropdown-item" href="essence.html">에센스</a>
+                <a class="dropdown-item" href="oil.html">페이스오일</a>
+                </div>
+            </li>
+          </ul>
+      <ul class="nav justify-content-end">
+         <li class="nav-item">
+             <a class="nav-link active" href="login.html">로그인</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="join.html">회원가입</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html"> 장바구니</a>
+            </li>
+          </ul>	    
+        </div>
+      </div>
+    </nav>
+  
+  <div class="container-fluid" id="content">
+      <div class="row" id="content_row">
+          
+          
+          <main class="content container">
+          
+              <h2 class="title">장바구니 목록</h2>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>연번</th><th>제품명</th><th>제품사진</th><th>구매</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  
+                      
+                      <tr>
+                          <td>1</td>
+                          <td>스킨1  (구매가격 : 10000)</td>
+                          <td><img src="./img/skin/skin1.jpg" alt="스킨1" style="max-height:80px; width:auto;"></td>
+                          <td><a href="Sales.html" class="btn btn-outline-info">구매하기</a></td>
+                      </tr>
+                      
+                          
+                  </tbody>
+              </table>
+          </main>
+      </div>
+  </div>
