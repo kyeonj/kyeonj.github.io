@@ -1,0 +1,14 @@
+.top-bar, .top-bar ul { background-color: #fff;}
+a {color:cadetblue;}
+.dropdown.menu .is-active>a {color: darkturquoise;}
+a:focus, a:hover {color:darkturquoise;}
+ul { list-style:none; }
+.lead, .subheader { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#gnb > ul > li[role="menuitem"] { height:38px; }
+#gnb > ul > li.menu-text[role="menuitem"] { padding-top:0px; padding-bottom:0px; }
+
+.h1 { padding-top:0.9rem; padding-bottom:0.3rem; }
+.container { clear:both; width:1200px; margin:0 auto; }
+.container::after { content:""; display:block; width:100%; clear:both; }
+
+#table1 th { border-bottom:1px solid #fff; }

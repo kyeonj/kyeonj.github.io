@@ -1,0 +1,21 @@
+.footer-nav {	background-color:cadetblue; height:80px; box-sizing:border-box; overflow:hidden; }
+.footer-nav > article { clear:both; width:1200px; margin:0px auto; height:80px; }
+.footer-nav > article > div { float:left; }
+.footer-nav-left { color:#fff; width:25%; line-height:80px; }
+.footer-nav-center {
+	width:50%;
+}
+.footer-nav-right {
+	width:25%; 
+}
+#footer .footer-nav-left .footer-copyright {
+	line-height:80px;
+}
+
+#footer > article > div > ul > li.footer-nav-item { 
+	float:left; width:auto; padding:1.8rem;  
+	min-width:40px;
+}
+#footer > article > div.footer-nav-right > ul > li.footer-nav-item {
+	width:25%; height:25%;
+}
