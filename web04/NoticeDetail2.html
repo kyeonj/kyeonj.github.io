@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>공지사항 목록</title>
+	<title>공지사항 글 보기</title>
     <!-- 헤드 부분 인클루드 -->
 <!-- <script src="include/jquery.js"></script>
 <script src="include/foundation.js"></script>
@@ -120,8 +120,8 @@ ul { list-style:none; }
  
      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
        <ul class="orbit-container">
-         <li><button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-         <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button></li>
+         <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+         <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
          <li class="orbit-slide is-active">
            <img src="./icon/main1.jpg" alt="더미이미지">
          </li>
@@ -162,47 +162,42 @@ ul { list-style:none; }
  </header>
  <div class="content" id="content">
     <div class="row column text-center">
-      <h2 class="h1">공지사항 목록</h2>
+      <h2 class="h1">공지사항 상세 보기</h2>
       <hr>
       <div class="container">
-          <table>
-              <thead>
-                  <tr>
-                      <th width="80">No</th>
-                      <th>Title</th>
-                      <th width="110">RegDate</th>
-                      <th width="90">Visited</th>
-                  </tr>
-              </thead>
+          <table id="table1">
               <tbody>
-                <tr>
-                  <td>2</td>
-                  <td><a href="NoticeDetail2.html">공지사항2</a></td>
-                  <td>
-                      
-                      2022-12-20
-                  </td>
-                  <td>1</td>
-                </tr>
+    
                   <tr>
-                      <td>1</td>
-                      <td><a href="NoticeDetail.html">공지사항1</a></td>
-                      <td>
-                          
-                          2022-12-01
-                      </td>
+                      <th style="background-color:#dcdcdc">글 번호</th>
+                      <td>2</td>
+                  </tr>	
+                  <tr>
+                      <th style="background-color:#dcdcdc">글 제목</th>
+                      <td>공지사항2</td>
+                  </tr>
+                  <tr>
+                      <th style="background-color:#dcdcdc">글 내용</th>
+                      <td><p>공지사항2에 대한내용</p></td>
+                  </tr>
+                  <tr>
+                      <th style="background-color:#dcdcdc">작성자</th>
+                      <td>admin</td>
+                  </tr>
+                  <tr>
+                      <th style="background-color:#dcdcdc">작성일시</th>
+                      <td>2022-12-20 13:37:15.0</td>
+                  </tr>
+                  <tr>
+                      <th style="background-color:#dcdcdc">읽은 횟수</th>
                       <td>1</td>
                   </tr>
-
               </tbody>
           </table>
-                       
-              <div class="button-group">
-              <a class="button" href="NoticeAdd.html">글쓰기</a>
+            <div class="button-group">
+              <a class="button" href="Notice.html">글 목록</a>
             </div>
-        
       </div>
-
     </div>
 </div>
 <footer id="footer" class="footer-nav row expanded collapse">
