@@ -14,43 +14,35 @@
     .page_tit { font-size:5vw; clear:both; padding-bottom: 2rem; }
     .ui-header .ui-title { text-align:center; }
     .kkt-video-player { clear:both; }
-    .kkt-video-player::after { content:""; display:block; clear:both;}
+    .kkt-video-player::after { content:""; display:block; clear:both; width: 50%;}
     .vdo1-dimensions { width:600px; margin: 0; padding: 0; min-width:600px;  min-height:452px; }
     .vdo1-dimensions::after { content:""; clear:both; display:block; }
     .video-js .vjs-tech { display:block; width:auto; min-width:600px; min-height:452px;}
+
     /* 모바일 */
     @media screen and (max-width:767px) {
       body, html { margin: 0; padding: 0; }
-      .kkt-video-player { min-width:320px; margin: 0; padding: 0; width:100vw; }
-      .vdo1-dimensions { min-width:320px; width:100vw; }
-      .video-js .vjs-tech { min-width:320px; width:auto; }
+      .kkt-video-player { min-width:90vw; margin: 0; padding: 0; width:30vw; }
+      .vdo1-dimensions { min-width:90vw; max-width:90vw; height: 30vw; }
+      .video-js .vjs-tech { min-width:90vw; max-width: 90vw; width:auto; }
     }
     /* 태블릿 */
     @media screen and (min-width:768px) and (max-width:959px){
       body, html { margin: 0; padding: 0; }
       .kkt-video-player { min-width:768px; margin: 0; padding: 0; width:100vw; }
-      .vdo1-dimensions { min-width:768px; width:100vw; }
-      .video-js .vjs-tech { min-width:768px; width:auto; }
+      .vdo1-dimensions { min-width:768px; width:100vw; height: 30vw;}
+      .video-js .vjs-tech { min-width:768px; max-width: 959px; width:auto; }
     }
     /* 데스크탑 */
     @media screen and (min-width:960px) {
       body, html { margin: 0; padding: 0; }
       .kkt-video-player { min-width:960px; margin: 0; padding: 0; max-width:960px;  }
-      .vdo1-dimensions { min-width:960px; max-width:960px;  }
-      .video-js .vjs-tech { min-width:960px; max-width:960px; width:auto; }
+      .vdo1-dimensions { min-width:960px; max-width:960px; height: 30vw; }
+      .video-js .vjs-tech { min-width:960px; max-width:960px; height:auto; }
     }
     </style>
     <link rel="manifest" href="manifest.json" />
-
     <link rel="shortcut icon" href="./assets/icon/favicon.jpg">
-    <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png" />
-    <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
-    <link rel="apple-touch-icon" href="favicon-57.png" sizes="57x57">
-    <link rel="apple-touch-icon" href="favicon-76.png" sizes="76x76">
-    <link rel="apple-touch-icon" href="favicon-120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="favicon-152.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="favicon-180.png" sizes="180x180">
-    <link rel="apple-touch-startup-image" href="startup.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -100,7 +92,7 @@
         <h2 class="ui-title">HOTPING</h2>
     </header>
     <div class="ui-content" data-role="content">
-        <h1 class="page_tit">메인페이지</h1>
+        <h1 class="page_tit">HOTPING에 오신걸 환영합니다.</h1>
         <ul class="ui-list" data-role="listview">
             <li><a href="#page1" data-transition="slide">회사소개</a></li>
             <li><a href="#page2" data-transition="slide">공지사항</a></li>
@@ -333,36 +325,36 @@
             <li class="ui-li-has-thumb ui-first-child">
                 <a href="#page3-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/dkdnxj1.gif">
-                    <p><strong>헤브링 꽈배기 투웨이 니트집업가디건</strong></p>
-                    <p>[44~110]</p>
+                    <p><strong>푸퍼 하이넥 투웨이 오버핏패딩</strong></p>
+                    <p>45,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/dkdnxj2.gif">
-                    <p><strong>L-1146 오버핏 더블울코트</strong></p>
-                    <p>[44~105]</p>
+                    <p><strong>하이넥 후드 야상롱점퍼</strong></p>
+                    <p>108,810원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/dkdnxj3.gif">
-                    <p><strong>고호츠 루즈핏 라운드니트가디건</strong></p>
-                    <p>[44~77]</p>
+                    <p><strong>오버핏 더블울코트</strong></p>
+                    <p>64,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/dkdnxj4.gif">
-                    <p><strong>온도를더해 누빔조끼</strong></p>
-                    <p>[44~100]</p>
+                    <p><strong>꽈배기 투웨이 니트집업가디건</strong></p>
+                    <p>28,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/dkdnxj5.gif">
-                    <p><strong>리엣 루즈핏 터틀넥 하찌니트 집업 가디건</strong></p>
-                    <p>[44~99]</p>
+                    <p><strong>테일러드 울기모 싱글코트</strong></p>
+                    <p>57,800원</p>
                 </a>
             </li>
             <a href="#page4" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">상의</a>
@@ -420,13 +412,12 @@
       </thead>
       <tbody>
         <tr>
-          <td><br><hr>헤브링 꽈배기 투웨이 니트집업가디건</td>
+          <td><br><hr>푸퍼 하이넥 투웨이 오버핏패딩</td>
           <td><br><hr><img src="./assets/img/dkdnxj1.gif"><br><hr>
-            도톰한 꽈배기 니트짜임과 비스코스 혼방소재로 올시즌 따뜻하고 활용도 높게 즐기기 좋은 니트집업가디건 소개해드려요. 
-            싱글카라 디자인으로 단정하고 깔끔한 핏이 연출되며, 프론트 투웨이 지퍼 디테일로 다양한 스타일링이 연출 가능해요. 
-            소매와 밑단 시보리 마감으로 늘어짐을 방지해 오래도록 입으실 수 있답니다. 
-            활용도 높은 아이보리,그레이,블랙 3컬러로 준비되어있으니 취향에 맞게 선택해주세요. :)<hr></td>
-          <td>28,800원</td>
+            한겨울에도 끄떡없는 빵빵한 하이넥 헤비 패딩점퍼- 푸퍼 하이넥 오버핏패딩점퍼 소개드려요♥ 
+            웰론 소재의 특징인 보온성은 높지만 가벼운 무게감으로 하루종일 편안하게 입어지며 넉넉한 품에다 오버핏으로 떨어지는 실루엣으로 체형 커버도 완벽하게 도와드린답니다. 
+            또한 투웨이지퍼에 밑단 조임 스트링이 있어서 다양한 스타일링이 가능해요! 다채롭고 사랑스러운 색감들인 8가지 컬러로 준비했어요. :)<hr></td>
+          <td>45,800원</td>
         </tr>
       </tbody>
     </table>
@@ -478,36 +469,36 @@
             <li class="ui-li-has-thumb ui-first-child">
                 <a href="#page4-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/tkddml1.gif">
-                    <p><strong>기모맨투맨 기획전</strong></p>
-                    <p>[44~100]</p>
+                    <p><strong>보카시 루즈핏 울 니트티</strong></p>
+                    <p>39,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/tkddml2.gif">
-                    <p><strong>후라이스폴라 긴팔티셔츠</strong></p>
-                    <p>[44~100]</p>
+                    <p><strong>속기모라운드 긴팔티셔츠</strong></p>
+                    <p>17,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/tkddml3.gif">
-                    <p><strong>헤브링 꽈배기 투웨이 니트집업가디건</strong></p>
-                    <p>[44~110]</p>
+                    <p><strong>후라이스폴라 긴팔티셔츠</strong></p>
+                    <p>9,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/tkddml4.gif">
-                    <p><strong>위러블리_속기모ver 물결 하이넥 베이직 긴팔티셔츠</strong></p>
-                    <p>[44~99]</p>
+                    <p><strong>페오트 반목폴라 워머 기모티셔츠</strong></p>
+                    <p>15,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/tkddml5.gif">
-                    <p><strong>코르 루즈핏 반집업 아노락 골지니트맨투맨</strong></p>
-                    <p>[44~110]</p>
+                    <p><strong>골지폴라니트티</strong></p>
+                    <p>12,800원</p>
                 </a>
             </li>
             <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">아우터</a>
@@ -565,14 +556,13 @@
       </thead>
       <tbody>
         <tr>
-          <td><br><hr>기모맨투맨 기획전</td>
+          <td><br><hr>보카시 루즈핏 울 니트티</td>
           <td><br><hr><img src="./assets/img/tkddml1.gif"><br><hr>
-            믿고 입는 핫핑에서 선보이는 기획전 시리즈. 이번에는 데일리로 활용도 높은 캐주얼 아이템 기모 맨투맨을 소개합니다. 
-            루즈하게 떨어지는 핏으로 여리여리하게 연출되며 자연스럽게 체형커버 효과를 드리며, 다양한 프린팅 구성으로 스타일리시한 데일리룩을 완성해드려요. 
-            부드럽고 포근한 기모 안감으로 가득해 따뜻하게 입어보실 수 있답니다. 
-            여유있는 핏으로 여러가지 아이템과 레이어드해 연출하시기에도 좋으며 소프트한 소매와 밑단 시보리로 찬바람으로 부터 따뜻함을 지켜드려요. 
-            스타일에 구애받지 않고 다양한 아이템과 스타일링 하기 좋아 소장을 추천해드려요 :)<hr></td>
-          <td>19,800원</td>
+            코디 활용도 200%인 라운드 보카시 루즈핏 울 니트티- 베이직한 디자인으로 다양한 옷들과 레이어드하여 즐기실 수 있으며 
+            소매, 네크라인, 밑단의 쫀쫀한 시보리로 핏 변형 걱정없이 오래오래 즐기실 수 있어요. 
+            어깨선을 부각하지않는 루즈한 핏으로 여리여리한 실루엣을 선사해드리는건 물론 두가지 원사를 엮은듯한 보카시짜임으로 퀄리티를 더하였답니다. 
+            크리미한 색감들의 다채로운 8가지 컬러들로 준비했어요. :)<hr></td>
+          <td>39,800원</td>
         </tr>
       </tbody>
     </table>
@@ -625,35 +615,35 @@
                 <a href="#page5-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/gkdml1.gif">
                     <p><strong>제드_기모ver 밴딩 와이드팬츠</strong></p>
-                    <p>[44~110]</p>
+                    <p>14,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/gkdml2.gif">
                     <p><strong>모어소프트 벨로아 골덴 속기모 밴딩와이드바지</strong></p>
-                    <p>[44~100]</p>
+                    <p>14,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/gkdml3.gif">
                     <p><strong>최고좋아_기모 와이드팬츠</strong></p>
-                    <p>[44~100]</p>
+                    <p>23,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/gkdml4.gif">
                     <p><strong>히트웜 핫핑텍10부레깅스</strong></p>
-                    <p>[44~100]</p>
+                    <p>12,800원</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
                     <img src="./assets/img/gkdml5.gif">
-                    <p><strong>[롱&기본] 포윈터 속밴딩 기모 와이드슬랙스</strong></p>
-                    <p>[25~36]</p>
+                    <p><strong>포윈터 속밴딩 기모 와이드슬랙스</strong></p>
+                    <p>32,370원</p>
                 </a>
             </li>
             <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">아우터</a>
@@ -843,7 +833,7 @@
         </nav> 
     </header>
     <div data-role="content" role="sub" class="ui-content">
-        <h2 class="ui-title">서비스</h2>
+        <h2 class="ui-title">HOTPING 유튜브영상</h2>
         <div class="player">
             <div class="kkt-video-player">
                <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
@@ -852,11 +842,11 @@
             </div>
             <div class="btn_lst" id="btn_lst">
                <ul>
-                   <li><span data-val="./assets/vdo/video01.mp4">비디오1</span></li>
-                   <li><span data-val="./assets/vdo/video02.mp4">비디오2</span></li>
-                   <li><span data-val="./vdo/video03.mp4">비디오3</span></li>
-                   <li><span data-val="./vdo/video04.mp4">비디오4</span></li>
-                   <li><span data-val="./vdo/video05.mp4">비디오5</span></li>
+                   <li><span data-val="./assets/vdo/video01.mp4">[핫핑 EVENT🎁] 아이패드 드립니다!</span></li>
+                   <li><span data-val="./assets/vdo/video02.mp4">[158cm 82kg🎄✨88사이즈] 꾸꾸 끝판왕! 연말룩 코디</span></li>
+                   <li><span data-val="./assets/vdo/video03.mp4">워터틴트 오래가는법 알고싶다구요?!🙋‍♀️ 3분이면 되는 간단한 꿀팁! </span></li>
+                   <li><span data-val="./assets/vdo/video04.mp4">가을 데일리룩</span></li>
+                   <li><span data-val="./assets/vdo/video05.mp4">[158cm 82kg☕️88사이즈] 숏코트 코디 골라주실분?🙋🏻‍♀️</span></li>
                </ul>
             </div>
           </div>
