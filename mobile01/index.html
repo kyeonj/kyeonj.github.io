@@ -4,18 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>jQuery 모바일 웹 앱1</title>
+    <title>HOTPING</title>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
     <style>
     .page_tit { font-size:5vw; clear:both; padding-bottom: 2rem; }
     .ui-header .ui-title { text-align:center; }
-    </style>
+    .kkt-video-player { clear:both; }
+    .kkt-video-player::after { content:""; display:block; clear:both;}
+    .vdo1-dimensions { width:600px; margin: 0; padding: 0; min-width:600px;  min-height:452px; }
+    .vdo1-dimensions::after { content:""; clear:both; display:block; }
+    .video-js .vjs-tech { display:block; width:auto; min-width:600px; min-height:452px;}
+    /* 모바일 */
+    @media screen and (max-width:767px) {
+      body, html { margin: 0; padding: 0; }
+      .kkt-video-player { min-width:320px; margin: 0; padding: 0; width:100vw; }
+      .vdo1-dimensions { min-width:320px; width:100vw; }
+      .video-js .vjs-tech { min-width:320px; width:auto; }
+    }
+    /* 태블릿 */
+    @media screen and (min-width:768px) and (max-width:959px){
+      body, html { margin: 0; padding: 0; }
+      .kkt-video-player { min-width:768px; margin: 0; padding: 0; width:100vw; }
+      .vdo1-dimensions { min-width:768px; width:100vw; }
+      .video-js .vjs-tech { min-width:768px; width:auto; }
+    }
+    /* 데스크탑 */
+    @media screen and (min-width:960px) {
+      body, html { margin: 0; padding: 0; }
+      .kkt-video-player { min-width:960px; margin: 0; padding: 0; max-width:960px;  }
+      .vdo1-dimensions { min-width:960px; max-width:960px;  }
+      .video-js .vjs-tech { min-width:960px; max-width:960px; width:auto; }
+    }
     </style>
     <link rel="manifest" href="manifest.json" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="./assets/icon/favicon.jpg">
     <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png" />
     <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
     <link rel="apple-touch-icon" href="favicon-57.png" sizes="57x57">
@@ -90,7 +117,7 @@
 <div id="page1" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
         <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-        <h1 class="ui-title" role="heading">회사소개</h1>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
         <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
         <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
             <ul class="ui-grid-c">
@@ -142,7 +169,7 @@
 <div id="page2" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
         <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-        <h1 class="ui-title" role="heading">공지사항</h1>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
         <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
         <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
             <ul class="ui-grid-c">
@@ -191,24 +218,6 @@
                     <td class="ui-table-priority-3 ui-table-cell-visible">관리자</td>
                     <td class="ui-table-priority-1">5</td>
                 </tr>
-                <tr>
-                    <th class="ui-table-priority-2 ui-table-cell-visible">2</th>
-                    <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">공지사항2</a></td>
-                    <td class="ui-table-priority-3 ui-table-cell-visible">관리자</td>
-                    <td class="ui-table-priority-1">1</td>
-                </tr>
-                <tr>
-                    <th class="ui-table-priority-2 ui-table-cell-visible">3</th>
-                    <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">공지사항3</a></td>
-                    <td class="ui-table-priority-3 ui-table-cell-visible">관리자</td>
-                    <td class="ui-table-priority-1">3</td>
-                </tr>
-                <tr>
-                    <th class="ui-table-priority-2 ui-table-cell-visible">4</th>
-                    <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">공지사항4</a></td>
-                    <td class="ui-table-priority-3 ui-table-cell-visible">관리자</td>
-                    <td class="ui-table-priority-1">5</td>
-                </tr>
             </tbody>
         </table>
         <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">아우터</a>
@@ -219,10 +228,75 @@
         <h3>여기는 푸터입니다.</h3>
     </footer>
 </div>
+<div id="page2-1" data-role="page" class="ui-page ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
+        <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
+        <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
+            <ul class="ui-grid-c">
+                <li class="ui-block-a">
+                    <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">home</span>
+                        <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-b">
+                    <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Notice</span>
+                        <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-c">
+                    <a href="#page1" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Company</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-d">
+                    <a href="#page8" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Service</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+<div data-role="content" role="sub" class="ui-content">
+    <h2 class="ui-title">공지사항 상세보기</h2>
+    <div role="main" class="ui-content">
+    <table data-role="table" id="my-table" data-mode="reflow">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Title</th>
+          <th>Name</th>
+          <th>Content</abbr></th>
+          <th>Hit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>공지사항1</a></td>
+          <td>관리자</td>
+          <td>공지사항1 내용입니다.</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <a href="#page2" class="ui-btn ui-btn-inline">목록으로</a>
+  </div>
+  <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+    <h3>여기는 푸터입니다.</h3>
+</footer>
+</div>
+</div>
 <div id="page3" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
         <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-        <h1 class="ui-title" role="heading">아우터</h1>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
         <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
         <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
             <ul class="ui-grid-c">
@@ -254,39 +328,39 @@
         </nav>
     </header>
     <div data-role="content" role="sub" class="ui-content">
-        <h2 class="ui-title">Best</h2>
+        <h2 class="ui-title">아우터 Best</h2>
         <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="상품명 검색">
             <li class="ui-li-has-thumb ui-first-child">
-                <a href="#page1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./dkdnxj1.gif">
+                <a href="#page3-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="./assets/img/dkdnxj1.gif">
                     <p><strong>헤브링 꽈배기 투웨이 니트집업가디건</strong></p>
                     <p>[44~110]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./dkdnxj2.gif">
+                    <img src="./assets/img/dkdnxj2.gif">
                     <p><strong>L-1146 오버핏 더블울코트</strong></p>
                     <p>[44~105]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./dkdnxj3.gif">
+                    <img src="./assets/img/dkdnxj3.gif">
                     <p><strong>고호츠 루즈핏 라운드니트가디건</strong></p>
                     <p>[44~77]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./dkdnxj4.gif">
+                    <img src="./assets/img/dkdnxj4.gif">
                     <p><strong>온도를더해 누빔조끼</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./dkdnxj5.gif">
+                    <img src="./assets/img/dkdnxj5.gif">
                     <p><strong>리엣 루즈핏 터틀넥 하찌니트 집업 가디건</strong></p>
                     <p>[44~99]</p>
                 </a>
@@ -299,10 +373,75 @@
         <h3>여기는 푸터입니다.</h3>
     </footer>
 </div>
+<div id="page3-1" data-role="page" class="ui-page ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page3" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
+        <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
+        <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
+            <ul class="ui-grid-c">
+                <li class="ui-block-a">
+                    <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">home</span>
+                        <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-b">
+                    <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Notice</span>
+                        <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-c">
+                    <a href="#page1" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Company</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-d">
+                    <a href="#page8" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Service</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+<div data-role="content" role="sub" class="ui-content">
+    <h2 class="ui-title">아우터 상세보기</h2>
+    <div role="main" class="ui-content">
+    <table data-role="table" id="my-table" data-mode="reflow">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Content</abbr></th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><br><hr>헤브링 꽈배기 투웨이 니트집업가디건</td>
+          <td><br><hr><img src="./assets/img/dkdnxj1.gif"><br><hr>
+            도톰한 꽈배기 니트짜임과 비스코스 혼방소재로 올시즌 따뜻하고 활용도 높게 즐기기 좋은 니트집업가디건 소개해드려요. 
+            싱글카라 디자인으로 단정하고 깔끔한 핏이 연출되며, 프론트 투웨이 지퍼 디테일로 다양한 스타일링이 연출 가능해요. 
+            소매와 밑단 시보리 마감으로 늘어짐을 방지해 오래도록 입으실 수 있답니다. 
+            활용도 높은 아이보리,그레이,블랙 3컬러로 준비되어있으니 취향에 맞게 선택해주세요. :)<hr></td>
+          <td>28,800원</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <a href="#page3" class="ui-btn ui-btn-inline">목록으로</a>
+  </div>
+  <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+    <h3>여기는 푸터입니다.</h3>
+</footer>
+</div>
+</div>
 <div id="page4" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
         <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-        <h1 class="ui-title" role="heading">상의</h1>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
         <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
         <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
             <ul class="ui-grid-c">
@@ -334,39 +473,39 @@
         </nav> 
     </header>
     <div data-role="content" role="sub" class="ui-content">
-        <h2 class="ui-title">Best</h2>
+        <h2 class="ui-title">상의 Best</h2>
         <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="상품명 검색">
             <li class="ui-li-has-thumb ui-first-child">
-                <a href="#page1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml1.gif">
+                <a href="#page4-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="./assets/img/tkddml1.gif">
                     <p><strong>기모맨투맨 기획전</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml2.gif">
+                    <img src="./assets/img/tkddml2.gif">
                     <p><strong>후라이스폴라 긴팔티셔츠</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml3.gif">
+                    <img src="./assets/img/tkddml3.gif">
                     <p><strong>헤브링 꽈배기 투웨이 니트집업가디건</strong></p>
                     <p>[44~110]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml4.gif">
+                    <img src="./assets/img/tkddml4.gif">
                     <p><strong>위러블리_속기모ver 물결 하이넥 베이직 긴팔티셔츠</strong></p>
                     <p>[44~99]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml5.gif">
+                    <img src="./assets/img/tkddml5.gif">
                     <p><strong>코르 루즈핏 반집업 아노락 골지니트맨투맨</strong></p>
                     <p>[44~110]</p>
                 </a>
@@ -379,10 +518,76 @@
         <h3>여기는 푸터입니다.</h3>
     </footer>
 </div>
+<div id="page4-1" data-role="page" class="ui-page ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page4" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
+        <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
+        <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
+            <ul class="ui-grid-c">
+                <li class="ui-block-a">
+                    <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">home</span>
+                        <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-b">
+                    <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Notice</span>
+                        <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-c">
+                    <a href="#page1" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Company</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-d">
+                    <a href="#page8" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Service</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+<div data-role="content" role="sub" class="ui-content">
+    <h2 class="ui-title">상의 상세보기</h2>
+    <div role="main" class="ui-content">
+    <table data-role="table" id="my-table" data-mode="reflow">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Content</abbr></th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><br><hr>기모맨투맨 기획전</td>
+          <td><br><hr><img src="./assets/img/tkddml1.gif"><br><hr>
+            믿고 입는 핫핑에서 선보이는 기획전 시리즈. 이번에는 데일리로 활용도 높은 캐주얼 아이템 기모 맨투맨을 소개합니다. 
+            루즈하게 떨어지는 핏으로 여리여리하게 연출되며 자연스럽게 체형커버 효과를 드리며, 다양한 프린팅 구성으로 스타일리시한 데일리룩을 완성해드려요. 
+            부드럽고 포근한 기모 안감으로 가득해 따뜻하게 입어보실 수 있답니다. 
+            여유있는 핏으로 여러가지 아이템과 레이어드해 연출하시기에도 좋으며 소프트한 소매와 밑단 시보리로 찬바람으로 부터 따뜻함을 지켜드려요. 
+            스타일에 구애받지 않고 다양한 아이템과 스타일링 하기 좋아 소장을 추천해드려요 :)<hr></td>
+          <td>19,800원</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <a href="#page4" class="ui-btn ui-btn-inline">목록으로</a>
+  </div>
+  <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+    <h3>여기는 푸터입니다.</h3>
+</footer>
+</div>
+</div>
 <div id="page5" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
         <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-        <h1 class="ui-title" role="heading">하의</h1>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
         <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
         <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
             <ul class="ui-grid-c">
@@ -414,39 +619,39 @@
         </nav> 
     </header>
     <div data-role="content" role="sub" class="ui-content">
-        <h2 class="ui-title">Best</h2>
+        <h2 class="ui-title">하의 Best</h2>
         <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="상품명 검색">
             <li class="ui-li-has-thumb ui-first-child">
-                <a href="#page1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./gkdml1.gif">
+                <a href="#page5-1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+                    <img src="./assets/img/gkdml1.gif">
                     <p><strong>제드_기모ver 밴딩 와이드팬츠</strong></p>
                     <p>[44~110]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb">
                 <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./gkdml2.gif">
+                    <img src="./assets/img/gkdml2.gif">
                     <p><strong>모어소프트 벨로아 골덴 속기모 밴딩와이드바지</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./gkdml3.gif">
+                    <img src="./assets/img/gkdml3.gif">
                     <p><strong>최고좋아_기모 와이드팬츠</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./gkdml4.gif">
+                    <img src="./assets/img/gkdml4.gif">
                     <p><strong>히트웜 핫핑텍10부레깅스</strong></p>
                     <p>[44~100]</p>
                 </a>
             </li>
             <li class="ui-li-has-thumb ui-last-child">
                 <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./gkdml5.gif">
+                    <img src="./assets/img/gkdml5.gif">
                     <p><strong>[롱&기본] 포윈터 속밴딩 기모 와이드슬랙스</strong></p>
                     <p>[25~36]</p>
                 </a>
@@ -458,6 +663,71 @@
     <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
         <h3>여기는 푸터입니다.</h3>
     </footer>
+</div>
+<div id="page5-1" data-role="page" class="ui-page ui-page-theme-a">
+    <header data-role="header" class="ui-header" data-theme="a">
+        <a href="#page5" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
+        <h1 class="ui-title" role="heading">HOTPING</h1>
+        <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
+        <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
+            <ul class="ui-grid-c">
+                <li class="ui-block-a">
+                    <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">home</span>
+                        <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-b">
+                    <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Notice</span>
+                        <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-c">
+                    <a href="#page1" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Company</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+                <li class="ui-block-d">
+                    <a href="#page8" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                        <span class="ui-btn-text">Service</span>
+                        <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+<div data-role="content" role="sub" class="ui-content">
+    <h2 class="ui-title">하의 상세보기</h2>
+    <div role="main" class="ui-content">
+    <table data-role="table" id="my-table" data-mode="reflow">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Content</abbr></th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><br><hr>제드_기모ver 밴딩 와이드팬츠</td>
+          <td><br><hr><img src="./assets/img/gkdml1.gif"><br><hr>
+            편안함은 물론 스타일까지 잡은 베이직 와이드팬츠입니다. 허리 전체 밴딩과 내장 스트랩으로 하루종일 편안하게 입어보실 수 있으며, 심플한 디자인으로 다양한 아이템과 이지 스타일링하기 좋답니다. 
+            양 사이드 포켓을 더하여 간단한 수납이 가능하며, 부드럽고 신축성 좋은 소재에 포근한 기모안감 내장으로 따뜻한 착용감을 드려요. 
+            깔끔하고 와이드하게 떨어지는 핏으로 하체 군살 커버에도 탁월하답니다. 
+            데일리하게 즐기기 좋은 3컬러로 만나보세요 :)<hr></td>
+          <td>14,800원</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <a href="#page5" class="ui-btn ui-btn-inline">목록으로</a>
+  </div>
+  <footer data-role="footer" class="ui-footer" data-theme="a" data-position="fixed">
+    <h3>여기는 푸터입니다.</h3>
+</footer>
+</div>
 </div>
 <div id="page6" data-role="page" class="ui-page ui-page-theme-a">
     <header data-role="header" class="ui-header" data-theme="a">
@@ -574,42 +844,30 @@
     </header>
     <div data-role="content" role="sub" class="ui-content">
         <h2 class="ui-title">서비스</h2>
-        <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="상품명 검색">
-            <li class="ui-li-has-thumb ui-first-child">
-                <a href="#page1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml1.gif">
-                    <p><strong>기모맨투맨 기획전</strong></p>
-                    <p>[44~100]</p>
-                </a>
-            </li>
-            <li class="ui-li-has-thumb">
-                <a href="#page3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml2.gif">
-                    <p><strong>후라이스폴라 긴팔티셔츠</strong></p>
-                    <p>[44~100]</p>
-                </a>
-            </li>
-            <li class="ui-li-has-thumb ui-last-child">
-                <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml3.gif">
-                    <p><strong>헤브링 꽈배기 투웨이 니트집업가디건</strong></p>
-                    <p>[44~110]</p>
-                </a>
-            </li>
-            <li class="ui-li-has-thumb ui-last-child">
-                <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml4.gif">
-                    <p><strong>위러블리_속기모ver 물결 하이넥 베이직 긴팔티셔츠</strong></p>
-                    <p>[44~99]</p>
-                </a>
-            </li>
-            <li class="ui-li-has-thumb ui-last-child">
-                <a href="#page4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                    <img src="./tkddml5.gif">
-                    <p><strong>코르 루즈핏 반집업 아노락 골지니트맨투맨</strong></p>
-                    <p>[44~110]</p>
-                </a>
-            </li>
+        <div class="player">
+            <div class="kkt-video-player">
+               <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
+                   <source src="./assets/vdo/video01.mp4" type="video/mp4" />
+               </video>
+            </div>
+            <div class="btn_lst" id="btn_lst">
+               <ul>
+                   <li><span data-val="./assets/vdo/video01.mp4">비디오1</span></li>
+                   <li><span data-val="./assets/vdo/video02.mp4">비디오2</span></li>
+                   <li><span data-val="./vdo/video03.mp4">비디오3</span></li>
+                   <li><span data-val="./vdo/video04.mp4">비디오4</span></li>
+                   <li><span data-val="./vdo/video05.mp4">비디오5</span></li>
+               </ul>
+            </div>
+          </div>
+          <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+         <script>
+         $(document).ready(function(){
+           $("#btn_lst li span").click(function(){
+               $("#vdo1_html5_api").attr("src", $(this).attr("data-val"));
+           });
+         });  
+         </script>
             <a href="#page3" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">아우터</a>
             <a href="#page5" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">하의</a>
         </ul>
@@ -618,64 +876,6 @@
         <h3>여기는 푸터입니다.</h3>
     </footer>
     </div>
-    <div id="page2-1" data-role="page" class="ui-page ui-page-theme-a">
-        <header data-role="header" class="ui-header" data-theme="a">
-            <a href="#page0" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-left" data-role="button" role="button">Back</a>
-            <h1 class="ui-title" role="heading">상세보기</h1>
-            <a href="#page6" class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-right" data-role="button" role="button">로그인</a>
-            <nav data-role="navbar" data-grid="c" role="navgation" class="nav-glyphish-example ui-navbar">
-                <ul class="ui-grid-c">
-                    <li class="ui-block-a">
-                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
-                            <span class="ui-btn-text">home</span>
-                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
-                        </a>
-                    </li>
-                    <li class="ui-block-b">
-                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
-                            <span class="ui-btn-text">Notice</span>
-                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
-                        </a>
-                    </li>
-                    <li class="ui-block-c">
-                        <a href="#page1" data-icon="info" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
-                            <span class="ui-btn-text">Company</span>
-                            <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
-                        </a>
-                    </li>
-                    <li class="ui-block-d">
-                        <a href="#page8" data-icon="star" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
-                            <span class="ui-btn-text">Service</span>
-                            <span class="ui-icon ui-icon-info ui-icon-shadow"></span>
-                        </a>
-                    </li>
-                </ul>
-            </nav> 
-        </header>
-    <div data-role="content" role="sub" class="ui-content">
-        <h2 class="ui-title">공지사항 상세보기</h2>
-        <div role="main" class="ui-content">
-        <table data-role="table" id="my-table" data-mode="reflow">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Title</th>
-              <th>Name</th>
-              <th>Content</abbr></th>
-              <th>Hit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>1</th>
-              <td>공지사항1</a></td>
-              <td>관리자</td>
-              <td>공지사항1 내용입니다.</td>
-              <td>5</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
 </body>
 </html>
