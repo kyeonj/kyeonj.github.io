@@ -13,8 +13,8 @@
     <style>
     .page_tit { font-size:5vw; clear:both; padding-bottom: 2rem; }
     .ui-header .ui-title { text-align:center; }
-    .kkt-video-player { clear:both; }
-    .kkt-video-player::after { content:""; display:block; clear:both; width: 50%;}
+    .kyj-video-player { clear:both; }
+    .kyj-video-player::after { content:""; display:block; clear:both; width: 50%;}
     .vdo1-dimensions { width:600px; margin: 0; padding: 0; min-width:600px;  min-height:452px; }
     .vdo1-dimensions::after { content:""; clear:both; display:block; }
     .video-js .vjs-tech { display:block; width:auto; min-width:600px; min-height:452px;}
@@ -22,21 +22,21 @@
     /* 모바일 */
     @media screen and (max-width:767px) {
       body, html { margin: 0; padding: 0; }
-      .kkt-video-player { min-width:90vw; margin: 0; padding: 0; width:30vw; }
+      .kyj-video-player { min-width:90vw; margin: 0; padding: 0; width:30vw; }
       .vdo1-dimensions { min-width:90vw; max-width:90vw; height: 30vw; }
       .video-js .vjs-tech { min-width:90vw; max-width: 90vw; width:auto; }
     }
     /* 태블릿 */
     @media screen and (min-width:768px) and (max-width:959px){
       body, html { margin: 0; padding: 0; }
-      .kkt-video-player { min-width:768px; margin: 0; padding: 0; width:100vw; }
+      .kyj-video-player { min-width:768px; margin: 0; padding: 0; width:100vw; }
       .vdo1-dimensions { min-width:768px; width:100vw; height: 30vw;}
       .video-js .vjs-tech { min-width:768px; max-width: 959px; width:auto; }
     }
     /* 데스크탑 */
     @media screen and (min-width:960px) {
       body, html { margin: 0; padding: 0; }
-      .kkt-video-player { min-width:960px; margin: 0; padding: 0; max-width:960px;  }
+      .kyj-video-player { min-width:960px; margin: 0; padding: 0; max-width:960px;  }
       .vdo1-dimensions { min-width:960px; max-width:960px; height: 30vw; }
       .video-js .vjs-tech { min-width:960px; max-width:960px; height:auto; }
     }
@@ -99,34 +99,47 @@
     <link rel="apple-touch-icon" href="./assets/icon/apple-icon-152x152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="./assets/icon/apple-icon-180x180.png" sizes="180x180">
     <link rel="apple-touch-startup-image" href="startup.png">
-
+    <a href="https://www.flaticon.com/kr/free-icons/" title="발 아이콘">발 아이콘  제작자: Freepik - Flaticon</a>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="핫핑" />
 
     <meta name="application-name" content="핫핑">
     <meta name="subject" content="핫핑">
-    <meta name="keywords" content="여성 쇼핑몰">
-    <meta name="description" content="여성쇼핑몰">
+    <meta name="keywords" content="여성 쇼핑몰, 빅사이즈, 44~110사이즈">
+    <meta name="description" content="description">
     <meta name="url" content="https://kyeonj.github.io/mobile01">
     <meta name="author" content="kim yeon jeong">
     <meta name="email" content="k_yeonj@naver.com">
     <meta name="theme-color" content="#f1718c" />
     <meta name="robots" content="index, flow">
 
+    <!-- 앱 미리보기 정보 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" https://apps.apple.com/kr/app/%ED%95%AB%ED%95%91-hotping/id976492324" />
+    <meta property="al:ios:app_store_id" content="976492324" /> 
+    <meta property="al:ios:app_name" content="핫핑" /> 
+
+    <!--Android-->
+    <meta property="al:android:url" content="https://play.google.com/store/apps/details?id=co.kr.hotping.byapps" />
+    <meta property="al:android:app_name" content="핫핑" />
+    <meta property="al:android:package" content="co.kr.hotping.byapps" /> 
+    <meta property="al:web:url" content="https://play.google.com/store/apps/details?id=co.kr.hotping.byapps&hl=ko" />
+
     <!-- 그래픽 특성별 연동 설정 코드 -->
+    
     <!-- 오픈 그래프 -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kyeonj.github.io/mobile01">
     <meta property="og:title" content="핫핑">
     <meta property="og:site_name" content="핫핑">
-    <meta property="og:image" content="favicon.jpg">
+    <meta property="og:image" content="siteimage.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="400">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="video">
     <meta name="twitter:title" content="핫핑">
-    <meta name="twitter:description" content="여성쇼핑몰">
+    <meta name="twitter:description" content="44~110사이즈 여성쇼핑몰">
     <meta name="twitter:image" content="favicon.jpg">
 </head>
 <body class="ui-mobile-viewport ui-overlay-b">
@@ -904,7 +917,7 @@
     <div data-role="content" role="sub" class="ui-content">
         <h2 class="ui-title">HOTPING 유튜브영상</h2>
         <div class="player">
-            <div class="kkt-video-player">
+            <div class="kyj-video-player">
                <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
                    <source src="./assets/vdo/video01.mp4" type="video/mp4" />
                </video>
